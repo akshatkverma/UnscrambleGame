@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/gameInitializer">
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.android.unscramble.ui.game.GameFragment"
+        android:label="GameFragment" />
+    <fragment
+        android:id="@+id/gameInitializer"
+        android:name="com.example.android.unscramble.ui.game.GameInitializer"
+        android:label="GameInitializer" >
+        <action
+            android:id="@+id/action_gameInitializer_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+</navigation>
