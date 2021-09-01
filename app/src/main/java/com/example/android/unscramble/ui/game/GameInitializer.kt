@@ -27,10 +27,11 @@ class GameInitializer: Fragment() {
         binding.submitButton.setOnClickListener{ performAction() }
     }
 
+
     private fun setErrorTextFieldInitializer(error: Boolean) {
         if (error) {
             binding.textField.isErrorEnabled = true
-            binding.textField.error = getString(R.string.try_again)
+            binding.textField.error = getString(R.string.enter_valid)
         } else {
             binding.textField.isErrorEnabled = false
             binding.textInputEditText.text = null
@@ -41,7 +42,14 @@ class GameInitializer: Fragment() {
         val stringWeReceived=binding.textInputEditText.text.toString()
         val maxNo=stringWeReceived.toDouble()
         MAX_NO_OF_WORDS= maxNo.toInt()
-        val action=GameInitializerDirections.actionGameInitializerToGameFragment()
-        findNavController().navigate(action)
+        if(MAX_NO_OF_WORDS<=0)
+            setErrorTextFieldInitializer(true)
+        else
+            setErrorTextFieldInitializer(false)
+
+        if(MAX_NO_OF_WORDS>0) {
+            val action=GameInitializerDirections.actionGameInitializerToGameFragment()
+            findNavController().navigate(action)
+        }
     }
 }

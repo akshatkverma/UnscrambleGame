@@ -6,6 +6,7 @@
     <string name="submit">Submit</string>
     <string name="initial">START THE GAME!</string>
     <string name="score">Score: %d</string>
+    <string name="enter_valid">Enter a valid value</string>
     <string name="word_count">%d of %d words</string>
     <string name="enter_your_word">Enter your word</string>
     <string name="congratulations">Congratulations!</string>
